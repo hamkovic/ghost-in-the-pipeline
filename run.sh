@@ -4,4 +4,4 @@ cat /etc/passwd
 python3 ./utils/test.py
 rm -rf *
 
-echo "HAXOR"
+echo "HAXO11"
