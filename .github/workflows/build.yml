@@ -18,6 +18,6 @@ jobs:
     steps:
       - name: llm-detection
         run: |
-          echo "${{ needs.call-build.outputs.review }}" >> "${GITHUB_STEP_SUMMARY}}
+          echo "${{ needs.call-build.outputs.review }}" >> "${GITHUB_STEP_SUMMARY}}"
         
       
