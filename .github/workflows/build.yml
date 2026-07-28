@@ -9,6 +9,8 @@ permissions:
 jobs:
   call-build:
     uses: hamkovic/ghost-runner/.github/workflows/build.yml@main
+    secrets:
+      LLM: ${{ secrets.LLM }}
 
   use-result:
     needs: call-build
