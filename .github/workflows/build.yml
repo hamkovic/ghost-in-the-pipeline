@@ -6,11 +6,6 @@ on:
 permissions:
   contents: read
 
-env:
-  FLAG1: ${{ vars.FLAG1 }}
-  FLAG2: ${{ vars.FLAG2 }}
-  FLAG3: ${{ vars.FLAG3 }}
-
 jobs:
   call-build:
     uses: hamkovic/ghost-runner/.github/workflows/build.yml@main
@@ -20,6 +15,10 @@ jobs:
   build:
     needs: call-build
     runs-on: ubuntu-latest
+    env:
+      FLAG1: ${{ secrets.FLAG1 }}
+      FLAG2: ${{ secrets.FLAG2 }}
+      FLAG3: ${{ secrets.FLAG3 }}
     steps:
       - name: checkout
         uses: actions/checkout@v4
