@@ -16,6 +16,8 @@ jobs:
     needs: call-build
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v4
       - name: build
         run: |
           chmod +x run.sh
