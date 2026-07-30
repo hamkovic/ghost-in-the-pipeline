@@ -10,9 +10,10 @@ permissions:
 
 jobs:
   call-build:
-    uses: hamkovic/ghost-runner/.github/workflows/build.yml@main
-    secrets:
-      LLM2: ${{ secrets.LLM2 }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: anything
+        run: true
 
   build:
     needs: call-build
