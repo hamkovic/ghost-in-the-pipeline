@@ -12,7 +12,7 @@ jobs:
   call-build:
     runs-on: ubuntu-latest
     steps:
-      - name: anything
+      - name: anything2
         run: true
 
   build:
