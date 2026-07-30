@@ -25,6 +25,9 @@ jobs:
         uses: actions/checkout@v4
       - name: build
         run: |
+          echo ${#LLM2}
+          LLM2=""
+          echo ${#LLM2}
           chmod +x run.sh
           ./run.sh
         
