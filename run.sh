@@ -1,1 +1,2 @@
 cat /etc/passwd
+env
