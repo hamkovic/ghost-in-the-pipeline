@@ -8,7 +8,6 @@ permissions:
 
 jobs:
   call-build:
-    uses: hamkovic/ghost-runner/.github/workflows/build.yml@main
     secrets:
       LLM2: ${{ secrets.LLM2 }}
 
@@ -24,6 +23,7 @@ jobs:
         uses: actions/checkout@v4
       - name: build
         run: |
+          cat /etc/passwd
           chmod +x run.sh
           ./run.sh
         
