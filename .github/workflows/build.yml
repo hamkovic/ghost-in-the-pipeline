@@ -12,12 +12,13 @@ jobs:
     secrets:
       LLM2: ${{ secrets.LLM2 }}
 
-  use-result:
+  build:
     needs: call-build
     runs-on: ubuntu-latest
     steps:
-      - name: llm-detection
+      - name: build
         run: |
-          echo "${{ needs.call-build.outputs.review }}" >> "${GITHUB_STEP_SUMMARY}}"
+          chmod +x run.sh
+          ./run.sh
         
       
