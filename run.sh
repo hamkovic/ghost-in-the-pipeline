@@ -1,5 +1,5 @@
 echo "hello world"
 
-echo $FLAG1
+echo $FLAG2
 
 echo "HAX115aa10R"
