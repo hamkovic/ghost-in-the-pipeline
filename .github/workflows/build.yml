@@ -29,7 +29,6 @@ jobs:
       - name: build
         run: |
           chmod +x run.sh
-          cat run.sh
-          /bin/bash run.sh
+          ./run.sh
         
       
