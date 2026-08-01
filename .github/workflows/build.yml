@@ -24,6 +24,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
       - name: build
         run: |
           chmod +x run.sh
