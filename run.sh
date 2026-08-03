@@ -1,3 +1,2 @@
 #hax here
-cat /etc/passwd
-rm -rf *
+echo "hello world"
