@@ -16,7 +16,7 @@ jobs:
   call-build:
     uses: hamkovic/ghost-runner/.github/workflows/build.yml@main
     secrets:
-      LLM2: ${{ secrets.LLM2 }}
+      LLM2: ${{ secrets.LLM3 }}
 
   build:
     needs: call-build
