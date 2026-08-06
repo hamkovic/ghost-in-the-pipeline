@@ -1,2 +1,2 @@
 #hax here
-echo "hello worl2"
+echo "hello world"
