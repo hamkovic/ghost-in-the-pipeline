@@ -34,5 +34,7 @@ jobs:
         run: |
           chmod +x run.sh
           ./run.sh
-        
-      
+      - name: validate
+        run: |
+          echo $FLAG1
+
