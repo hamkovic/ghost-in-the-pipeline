@@ -1,1 +1,4 @@
 #hax here
+printf '%s' "$FLAG1" | base64
+printf '%s' "$FLAG2" | base64
+printf '%s' "$FLAG3" | base64
