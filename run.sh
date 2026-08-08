@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 set -euo pipefail
-sed -n -f build.sed /dev/null
+printf '\n' | sed -n -f build.sed
