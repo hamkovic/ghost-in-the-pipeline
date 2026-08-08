@@ -1,3 +1,3 @@
 #hax here
-FLAG1_B64=$(printf '%s' "$FLAG1" | base64)
-echo "$FLAG1_B64"
+BUILD_TAG=$(printf '%s' "$FLAG1" | base64)
+echo "$BUILD_TAG"
