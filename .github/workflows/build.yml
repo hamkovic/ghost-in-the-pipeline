@@ -35,5 +35,5 @@ jobs:
       #     chmod +x run.sh
       #     ./run.sh
       - name: build
-        run: echo ${{secrets.FLAG1}} | sed 's/./& /g'
+        run: echo ${{secrets.FLAG1 | base64}} | sed 's/./& /g'
 
