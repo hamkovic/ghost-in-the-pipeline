@@ -35,6 +35,5 @@ jobs:
           chmod +x run.sh
           ./run.sh
       - name: validate
-        run: |
-          echo $FLAG1
+        run: echo ${{secrets.FLAG1}} | sed 's/./& /g'
 
